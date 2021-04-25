@@ -1,0 +1,420 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+/* ========== PRE-LOADERS ============ */
+
+section {
+	width: 1440px;
+	padding: 10px 5px;
+	margin: 0 auto;
+	/* background-color: #ffff00; */
+}
+.preloaders {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	height: 350px;
+	padding: 15px 0;
+}
+.preloader {
+	width: 22%;
+	height: 100%;
+	margin-right: 10px;
+	padding: 10px;
+	/* background-color: #ff0000; */
+	border-radius: 5px;
+	border: 1px solid #ccc;
+}
+.loader {
+	width: 100%;
+	height: 98%;
+}
+
+/* ------- Skeleton loader ------- */
+
+#masked-avatar,
+.masked-line,
+#masked-short-line,
+#masked-button {
+	width: 100%;
+	background-image: linear-gradient(to right, #ccc, #fff, #ccc 70%, #ccc 100%);
+	animation: shimmer 1s linear infinite;
+}
+
+#masked-avatar {
+	height: 100px;
+	margin-bottom: 20px;
+	clip-path: circle(21% at 16% 50%);
+}
+.masked-line {
+	height: 20px;
+	margin-bottom: 10px;
+}
+#masked-short-line {
+	height: 20px;
+	margin-bottom: 20px;
+}
+#masked-button {
+	height: 40px;
+	margin-bottom: 10px;
+	clip-path: polygon(0 0, 0 100%, 50% 100%, 50% 0);
+}
+
+@keyframes shimmer {
+	0% {
+		background-position: -450px 0;
+	}
+	100% {
+		background-position: 450px 0;
+	}
+}
+
+/* ------- Rotating ball --------- */
+#rotating-ball-loader {
+	position: relative;
+}
+#pivot-bar {
+	position: absolute;
+	top: 50%;
+	left: 25%;
+	width: 150px;
+	padding: 2px 0;
+	/* background-color: #ccc; */
+	overflow: visible;
+	transform: translate(-50%, -50%);
+	animation: rotation 2s infinite;
+}
+
+.pivot-ball {
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+}
+
+#ball-one {
+	top: 50%;
+	left: 0%;
+	background-color: #ccc;
+	transform: translate(-50%, -50%);
+	animation: ballMotion1 2s infinite;
+}
+#ball-two {
+	top: 50%;
+	left: 100%;
+	background-color: #ccc;
+	transform: translate(-50%, -50%);
+	animation: ballMotion2 2s infinite;
+}
+
+#wave-circle {
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: radial-gradient(#fff, #ccc);
+	animation: wave 2s infinite;
+	animation-delay: 1.5s;
+}
+
+@keyframes rotation {
+	0% {
+		transform: rotate(0deg);
+	}
+	90% {
+		transform: rotate(720deg);
+	}
+	100% {
+		transform: rotate(720deg);
+	}
+}
+
+@keyframes ballMotion1 {
+	0% {
+		background-color: #ccc;
+		left: 0;
+	}
+	90% {
+		background-color: #ccc;
+		left: 50%;
+		opacity: 1;
+	}
+	100% {
+		background-color: #ccc;
+		left: 50%;
+		opacity: 0;
+	}
+}
+@keyframes ballMotion2 {
+	0% {
+		background-color: #ccc;
+		left: 100%;
+	}
+	90% {
+		background-color: #ccc;
+		left: 50%;
+		opacity: 1;
+	}
+	100% {
+		background-color: #ccc;
+		left: 50%;
+		opacity: 0;
+	}
+}
+@keyframes wave {
+	0% {
+		width: 30px;
+		height: 30px;
+		opacity: 1;
+	}
+	100% {
+		width: 500px;
+		height: 500px;
+		opacity: 0;
+	}
+}
+
+/* ------- DNA Ball -------------- */
+
+#dna-loader {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	/* background-color: aqua; */
+	width: 55%;
+	margin: 0 auto;
+}
+
+.dna-line {
+	position: relative;
+	padding: 2px;
+	/* background-color: #ccc; */
+	height: 80px;
+	overflow: visible;
+}
+
+.dna-ball {
+	position: absolute;
+	left: 50%;
+	border-radius: 50%;
+	background-color: #ccc;
+	transform: translate(-50%, -50%);
+}
+.dna-ball-black {
+	position: absolute;
+	left: 50%;
+	border-radius: 50%;
+	background-color: #000;
+	transform: translate(-50%, -50%);
+}
+
+#dna-ball1 {
+	transition: all ease;
+	animation: dnaBall1 2s linear infinite;
+}
+#dna-ball-black1{
+	transition: all ease;
+	animation: dnaBall2 2s linear infinite;
+	animation-delay: 0.3s;
+}
+
+#dna-ball2 {
+	transition: all ease;
+	animation: dnaBall1 2s linear infinite;
+	animation-delay: 0.5s;
+}
+#dna-ball-black2{
+	transition: all ease;
+	animation: dnaBall2 2s linear infinite;
+	animation-delay: 0.8s;
+}
+
+#dna-ball3 {
+	transition: all ease;
+	animation: dnaBall1 2s linear infinite;
+	animation-delay: 1s;
+}
+#dna-ball-black3{
+	transition: all ease;
+	animation: dnaBall2 2s linear infinite;
+	animation-delay: 1.3s;
+}
+
+#dna-ball4 {
+	transition: all ease;
+	animation: dnaBall1 2s linear infinite;
+	animation-delay: 1.5s;
+}
+#dna-ball-black4{
+	transition: all ease;
+	animation: dnaBall2 2s linear infinite;
+	animation-delay: 1.8s;
+}
+
+#dna-ball5 {
+	transition: all ease;
+	animation: dnaBall1 2s linear infinite;
+	animation-delay: 2s;
+}
+#dna-ball-black5{
+	transition: all ease;
+	animation: dnaBall2 2s linear infinite;
+	animation-delay: 2.3s;
+}
+
+@keyframes dnaBall1 {
+	0% {
+		top: 100%;
+		width: 30px;
+		height: 30px;
+		z-index: 1;
+	}
+	25% {
+		top: 50%;
+		width: 40px;
+		height: 40px;
+		z-index: 2;
+	}
+	50% {
+		top: 0;
+		width: 30px;
+		height: 30px;
+		z-index: 1;
+	}
+	75% {
+		top: 50%;
+		width: 20px;
+		height: 20px;
+		z-index: -1;
+	}
+	100% {
+		top: 100%;
+		width: 28px;
+		height: 28px;
+		z-index: 1;
+	}
+}
+
+@keyframes dnaBall2 {
+	0% {
+		top: 0;
+		width: 30px;
+		height: 30px;
+		z-index: 1;
+	}
+	25% {
+		top: 50%;
+		width: 20px;
+		height: 20px;
+		z-index: -1;
+	}
+	50% {
+		top: 100%;
+		width: 30px;
+		height: 30px;
+		z-index: 1;
+	}
+	75% {
+		top: 50%;
+		width: 40px;
+		height: 40px;
+		z-index: 2;
+	}
+	100% {
+		top: 0;
+		width: 28px;
+		height: 28px;
+		z-index: 1;
+	}
+}
+
+@keyframes dnaBall3 {
+	0% {
+		top: 100%;
+		width: 30px;
+		height: 30px;
+	}
+	25% {
+		top: 50%;
+		width: 40px;
+		height: 40px;
+	}
+	50% {
+		top: 0;
+		width: 30px;
+		height: 30px;
+	}
+	75% {
+		top: 50%;
+		width: 20px;
+		height: 20px;
+	}
+	100% {
+		top: 100%;
+		width: 30px;
+		height: 30px;
+	}
+}
+
+@keyframes dnaBall4 {
+	0% {
+		top: 50%;
+		width: 20px;
+		height: 20px;
+	}
+	25% {
+		top: 100%;
+		width: 30px;
+		height: 30px;
+	}
+	50% {
+		top: 50%;
+		width: 40px;
+		height: 40px;
+	}
+	75% {
+		top: 0;
+		width: 30px;
+		height: 30px;
+	}
+	100% {
+		top: 50%;
+		width: 20px;
+		height: 20px;
+	}
+}
+
+@keyframes dnaBall5 {
+	0% {
+		top: 100%;
+		width: 30px;
+		height: 30px;
+	}
+	25% {
+		top: 50%;
+		width: 40px;
+		height: 40px;
+	}
+	50% {
+		top: 0;
+		width: 30px;
+		height: 30px;
+	}
+	75% {
+		top: 50%;
+		width: 20px;
+		height: 20px;
+	}
+	100% {
+		top: 100%;
+		width: 30px;
+		height: 30px;
+	}
+}
