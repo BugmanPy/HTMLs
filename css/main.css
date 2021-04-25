@@ -44,7 +44,7 @@ section {
 #masked-button {
   width: 100%;
   background-image: linear-gradient(to right, #ccc, #fff, #ccc 70%, #ccc 100%);
-  animation: shimmer 1s linear infinite;
+  animation: shimmer 3s linear infinite;
 }
 
 #masked-avatar {
